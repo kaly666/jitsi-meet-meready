@@ -84,7 +84,7 @@
     margin: 0 auto;
     max-width: 100%;
     pointer-events: all;
-    border-radius: 6px;
+    border-radius: 18px;
 
     .toolbox-content-items {
         @include ltr;
@@ -165,6 +165,7 @@ div.hangup-menu-button {
 .video-preview {
     .toolbox-icon.toggled {
         background: none;
+        box-shadow: none;
 
         &:hover {
             background: rgba(255, 255, 255, 0.2);

@@ -84,20 +84,24 @@ const useStyles = makeStyles()(theme => {
     return {
         actionButton: {
             ...theme.typography.bodyLongBold,
-            borderRadius: theme.shape.borderRadius,
+            borderRadius: 12,
             boxSizing: 'border-box',
             color: theme.palette.actionButtonText,
             cursor: 'pointer',
             display: 'inline-block',
+            fontWeight: 700,
+            letterSpacing: '0.01em',
             marginBottom: '16px',
-            padding: '7px 16px',
+            padding: '10px 20px',
             position: 'relative' as const,
             textAlign: 'center',
+            transition: 'background-color .2s ease, box-shadow .2s ease, transform .15s ease',
             width: '100%',
             border: 0,
 
             '&.primary': {
                 background: theme.palette.prejoinActionButtonPrimary,
+                boxShadow: '0 4px 14px rgba(255, 252, 4, 0.18)',
                 color: theme.palette.prejoinActionButtonPrimaryText,
 
                 '& svg': {
@@ -105,16 +109,33 @@ const useStyles = makeStyles()(theme => {
                 },
 
                 '&:hover': {
-                    backgroundColor: theme.palette.prejoinActionButtonPrimaryHover
+                    backgroundColor: theme.palette.prejoinActionButtonPrimaryHover,
+                    boxShadow: '0 6px 20px rgba(255, 252, 4, 0.32)',
+                    transform: 'translateY(-1px)'
+                },
+
+                '&:active': {
+                    transform: 'translateY(0) scale(0.98)'
                 }
             },
 
             '&.secondary': {
-                background: theme.palette.prejoinActionButtonSecondary,
-                color: theme.palette.prejoinActionButtonSecondaryText,
+                background: theme.palette.ui02,
+                boxShadow: 'inset 0 0 0 1px rgba(255, 255, 255, 0.14)',
+                color: theme.palette.text01,
+
+                '& svg': {
+                    fill: theme.palette.icon01
+                },
 
                 '&:hover': {
-                    backgroundColor: theme.palette.prejoinActionButtonSecondaryHover
+                    backgroundColor: theme.palette.ui03,
+                    boxShadow: 'inset 0 0 0 1px rgba(255, 252, 4, 0.55)',
+                    transform: 'translateY(-1px)'
+                },
+
+                '&:active': {
+                    transform: 'translateY(0) scale(0.98)'
                 }
             },
 
@@ -126,14 +147,22 @@ const useStyles = makeStyles()(theme => {
             },
 
             '&.disabled': {
-                background: theme.palette.prejoinActionButtonDisabled,
-                border: '1px solid #5E6D7A',
-                color: '#AFB6BC',
-                cursor: 'initial',
+                background: theme.palette.ui02,
+                border: 0,
+                boxShadow: 'none',
+                color: theme.palette.text03,
+                cursor: 'not-allowed',
+                transform: 'none',
+
+                '&:hover': {
+                    background: theme.palette.ui02,
+                    boxShadow: 'none',
+                    transform: 'none'
+                },
 
                 '.icon': {
                     '& > svg': {
-                        fill: '#AFB6BC'
+                        fill: theme.palette.text03
                     }
                 }
             },

@@ -50,27 +50,31 @@ const useStyles = makeStyles()(theme => {
         button: {
             backgroundColor: theme.palette.action01,
             color: theme.palette.text01,
-            borderRadius: theme.shape.borderRadius,
-            padding: '10px 16px',
+            borderRadius: 12,
+            padding: '10px 20px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             border: 0,
             ...theme.typography.bodyShortBold,
-            transition: 'background .2s',
+            fontWeight: 700,
+            letterSpacing: '0.01em',
+            transition: 'background-color .2s ease, box-shadow .2s ease, transform .15s ease',
             cursor: 'pointer',
 
             '&:hover': {
-                backgroundColor: theme.palette.action01Hover
+                backgroundColor: theme.palette.action01Hover,
+                transform: 'translateY(-1px)'
             },
 
             '&:active': {
-                backgroundColor: theme.palette.action01Active
+                backgroundColor: theme.palette.action01Active,
+                transform: 'translateY(0) scale(0.98)'
             },
 
             '&.focus-visible': {
                 outline: 0,
-                boxShadow: `0px 0px 0px 2px ${theme.palette.focus01}`
+                boxShadow: `0px 0px 0px 3px ${theme.palette.focus01}`
             },
 
             '& div > svg': {
@@ -80,6 +84,11 @@ const useStyles = makeStyles()(theme => {
 
         primary: {
             color: theme.palette.text04,
+            boxShadow: '0 4px 14px rgba(255, 252, 4, 0.18)',
+
+            '&:hover': {
+                boxShadow: '0 6px 20px rgba(255, 252, 4, 0.32)'
+            },
 
             '& div > svg': {
                 fill: theme.palette.icon04
@@ -87,19 +96,21 @@ const useStyles = makeStyles()(theme => {
         },
 
         secondary: {
-            backgroundColor: theme.palette.action02,
-            color: theme.palette.text04,
+            backgroundColor: theme.palette.ui02,
+            color: theme.palette.text01,
+            boxShadow: 'inset 0 0 0 1px rgba(255, 255, 255, 0.14)',
 
             '&:hover': {
-                backgroundColor: theme.palette.action02Hover
+                backgroundColor: theme.palette.ui03,
+                boxShadow: 'inset 0 0 0 1px rgba(255, 252, 4, 0.55)'
             },
 
             '&:active': {
-                backgroundColor: theme.palette.action02Active
+                backgroundColor: theme.palette.ui02
             },
 
             '& div > svg': {
-                fill: theme.palette.icon04
+                fill: theme.palette.icon01
             }
         },
 
@@ -117,9 +128,11 @@ const useStyles = makeStyles()(theme => {
 
         destructive: {
             backgroundColor: theme.palette.actionDanger,
+            boxShadow: '0 4px 14px rgba(216, 56, 72, 0.22)',
 
             '&:hover': {
-                backgroundColor: theme.palette.actionDangerHover
+                backgroundColor: theme.palette.actionDangerHover,
+                boxShadow: '0 6px 20px rgba(216, 56, 72, 0.35)'
             },
 
             '&:active': {
@@ -128,17 +141,22 @@ const useStyles = makeStyles()(theme => {
         },
 
         disabled: {
-            backgroundColor: theme.palette.disabled01,
+            backgroundColor: theme.palette.ui02,
             color: theme.palette.text03,
+            boxShadow: 'none',
+            cursor: 'not-allowed',
 
             '&:hover': {
-                backgroundColor: theme.palette.disabled01,
-                color: theme.palette.text03
+                backgroundColor: theme.palette.ui02,
+                color: theme.palette.text03,
+                boxShadow: 'none',
+                transform: 'none'
             },
 
             '&:active': {
-                backgroundColor: theme.palette.disabled01,
-                color: theme.palette.text03
+                backgroundColor: theme.palette.ui02,
+                color: theme.palette.text03,
+                transform: 'none'
             },
 
             '& div > svg': {

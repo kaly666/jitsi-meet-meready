@@ -233,20 +233,23 @@ export const commonStyles = (theme: Theme) => {
 
         '.toolbox-icon': {
             display: 'flex',
-            borderRadius: 3,
+            borderRadius: 12,
             flexDirection: 'column' as const,
             fontSize: '1.5rem',
             height: 48,
             justifyContent: 'center',
+            transition: 'background-color .2s ease, box-shadow .2s ease, transform .15s ease',
             width: 48,
 
             '@media (hover: hover) and (pointer: fine)': {
                 '&:hover': {
-                    backgroundColor: theme.palette.toolboxIconHover
+                    backgroundColor: theme.palette.toolboxIconHover,
+                    transform: 'translateY(-1px)'
                 },
 
                 '&:active': {
-                    backgroundColor: theme.palette.toolboxIconActive
+                    backgroundColor: theme.palette.toolboxIconActive,
+                    transform: 'translateY(0) scale(0.96)'
                 }
             },
             [theme.breakpoints.down(320)]: {
@@ -255,12 +258,14 @@ export const commonStyles = (theme: Theme) => {
             },
 
             '&.toggled': {
-                backgroundColor: theme.palette.toolboxIconToggled
+                backgroundColor: 'rgba(255, 252, 4, 0.14)',
+                boxShadow: 'inset 0 0 0 1px rgba(255, 252, 4, 0.45)'
             },
 
             '&.disabled': {
-                cursor: 'initial !important',
-                backgroundColor: `${theme.palette.disabled01} !important`,
+                cursor: 'not-allowed !important',
+                transform: 'none !important',
+                backgroundColor: `${theme.palette.ui02} !important`,
 
                 '& svg': {
                     fill: `${theme.palette.icon03} !important`
@@ -278,13 +283,13 @@ export const commonStyles = (theme: Theme) => {
 
         '.toolbox-content-items': {
             background: theme.palette.toolboxBackground,
-            borderRadius: 6,
+            borderRadius: 18,
             margin: '0 auto',
-            padding: 6,
+            padding: 8,
             textAlign: 'center' as const,
             pointerEvents: 'all' as const,
             display: 'flex',
-            boxShadow: '0px 2px 8px 4px rgba(0, 0, 0, 0.25), 0px 0px 0px 1px rgba(0, 0, 0, 0.15)',
+            boxShadow: '0px 8px 24px rgba(0, 0, 0, 0.45), 0px 0px 0px 1px rgba(255, 255, 255, 0.06)',
 
             '& > div': {
                 marginRight: theme.spacing(2),

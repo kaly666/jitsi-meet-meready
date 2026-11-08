@@ -7,8 +7,8 @@
       "platform": "chromeos_play"
     }
   ],
-  "short_name": "MeReady",
-  "name": "MeReady",
+  "short_name": "MeReady Meet",
+  "name": "MeReady Meet",
   "icons": [
     {
       "src": "static/pwa/icons/icon192.png",
