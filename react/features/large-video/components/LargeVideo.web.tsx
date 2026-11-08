@@ -26,6 +26,15 @@ import { getLargeVideoParticipant } from '../functions';
 
 import ScreenSharePlaceholder from './ScreenSharePlaceholder.web';
 
+/**
+ * Default MeReady backdrop for the stage, used when no custom background is configured.
+ */
+const MEREADY_STAGE_BACKGROUND = [
+    'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(255, 252, 4, 0.08), rgba(255, 252, 4, 0) 70%)',
+    'linear-gradient(180deg, rgba(17, 17, 17, 0.86), rgba(17, 17, 17, 0.94))',
+    'url(images/meready-background.jpg)'
+].join(', ');
+
 
 interface IProps {
 
@@ -328,6 +337,12 @@ class LargeVideo extends Component<IProps> {
         if (_customBackgroundImageUrl) {
             styles.backgroundImage = `url(${_customBackgroundImageUrl})`;
             styles.backgroundSize = 'cover';
+        } else if (!_customBackgroundColor) {
+            // MeReady stage: the same chalkboard backdrop as the welcome page, dimmed so videos and avatars
+            // stay the focus, with a soft brand-yellow glow at the top.
+            styles.backgroundImage = MEREADY_STAGE_BACKGROUND;
+            styles.backgroundSize = 'cover';
+            styles.backgroundPosition = 'center';
         }
 
         if (_visibleFilmstrip && Number(_verticalFilmstripWidth) >= FILMSTRIP_BREAKPOINT) {

@@ -308,8 +308,10 @@ const defaultStyles = (theme: Theme) => {
         },
 
         indicatorsBackground: {
-            backgroundColor: 'rgba(0, 0, 0, 0.7)',
-            borderRadius: '4px',
+            backgroundColor: 'rgba(17, 17, 17, 0.6)',
+            backdropFilter: 'blur(10px)',
+            WebkitBackdropFilter: 'blur(10px)',
+            borderRadius: '8px',
             display: 'flex',
             alignItems: 'center',
             maxWidth: '100%',
@@ -330,7 +332,7 @@ const defaultStyles = (theme: Theme) => {
             left: 0,
             height: '100%',
             width: '100%',
-            borderRadius: '4px',
+            borderRadius: '14px',
             backgroundColor: theme.palette.thumbnailBackground
         },
 
@@ -339,7 +341,7 @@ const defaultStyles = (theme: Theme) => {
             width: '100%',
             height: '100%',
             zIndex: 9,
-            borderRadius: '4px',
+            borderRadius: '14px',
             pointerEvents: 'none' as const
         },
 
@@ -349,7 +351,7 @@ const defaultStyles = (theme: Theme) => {
 
         activeSpeaker: {
             '& .active-speaker-indicator': {
-                boxShadow: `inset 0px 0px 0px 3px ${theme.palette.action01Hover} !important`
+                boxShadow: `inset 0px 0px 0px 3px ${theme.palette.action01}, 0px 0px 18px rgba(255, 252, 4, 0.35) !important`
             }
         },
 

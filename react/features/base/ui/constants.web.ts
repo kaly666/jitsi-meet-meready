@@ -243,12 +243,12 @@ export const commonStyles = (theme: Theme) => {
 
             '@media (hover: hover) and (pointer: fine)': {
                 '&:hover': {
-                    backgroundColor: theme.palette.toolboxIconHover,
+                    backgroundColor: 'rgba(255, 255, 255, 0.10)',
                     transform: 'translateY(-1px)'
                 },
 
                 '&:active': {
-                    backgroundColor: theme.palette.toolboxIconActive,
+                    backgroundColor: 'rgba(255, 255, 255, 0.06)',
                     transform: 'translateY(0) scale(0.96)'
                 }
             },
@@ -282,14 +282,16 @@ export const commonStyles = (theme: Theme) => {
         },
 
         '.toolbox-content-items': {
-            background: theme.palette.toolboxBackground,
-            borderRadius: 18,
+            background: 'rgba(24, 24, 24, 0.55)',
+            backdropFilter: 'blur(18px) saturate(140%)',
+            WebkitBackdropFilter: 'blur(18px) saturate(140%)',
+            borderRadius: 20,
             margin: '0 auto',
             padding: 8,
             textAlign: 'center' as const,
             pointerEvents: 'all' as const,
             display: 'flex',
-            boxShadow: '0px 8px 24px rgba(0, 0, 0, 0.45), 0px 0px 0px 1px rgba(255, 255, 255, 0.06)',
+            boxShadow: '0px 18px 45px rgba(0, 0, 0, 0.45), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.10)',
 
             '& > div': {
                 marginRight: theme.spacing(2),

@@ -140,10 +140,12 @@ const MAX_HEIGHT = 400;
 const useStyles = makeStyles()(theme => {
     return {
         contextMenu: {
-            backgroundColor: theme.palette.overflowMenuBackground,
-            border: `1px solid ${theme.palette.overflowMenuBorder}`,
-            borderRadius: `${Number(theme.shape.borderRadius)}px`,
-            boxShadow: '0px 1px 2px rgba(41, 41, 41, 0.25)',
+            backgroundColor: 'rgba(26, 26, 26, 0.88)',
+            backdropFilter: 'blur(20px) saturate(140%)',
+            WebkitBackdropFilter: 'blur(20px) saturate(140%)',
+            border: '1px solid rgba(255, 255, 255, 0.10)',
+            borderRadius: '16px',
+            boxShadow: '0px 18px 45px rgba(0, 0, 0, 0.45)',
             color: theme.palette.overflowMenuItemText,
             ...theme.typography.bodyShortRegular,
             marginTop: '48px',

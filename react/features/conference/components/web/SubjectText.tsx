@@ -12,11 +12,15 @@ const useStyles = makeStyles()(theme => {
             ...theme.typography.bodyLongRegular,
             color: theme.palette.conferenceSubjectText,
             padding: '2px 16px',
-            backgroundColor: 'rgba(0, 0, 0, 0.6)',
+            backgroundColor: 'rgba(24, 24, 24, 0.55)',
+            backdropFilter: 'blur(14px)',
+            WebkitBackdropFilter: 'blur(14px)',
+            boxShadow: 'inset 1px 1px 0 0 rgba(255, 255, 255, 0.10), inset 0 -1px 0 0 rgba(255, 255, 255, 0.10)',
+            fontWeight: 600,
             maxWidth: '324px',
             boxSizing: 'border-box',
             height: '28px',
-            borderRadius: `${theme.shape.borderRadius}px 0 0 ${theme.shape.borderRadius}px`,
+            borderRadius: '14px 0 0 14px',
             marginLeft: '2px',
 
             '@media (max-width: 300px)': {
