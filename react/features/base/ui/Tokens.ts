@@ -182,16 +182,16 @@ export const colorMap = {
     prejoinDeviceStatusText: 'uiBackground', // Device status text
 
     // Notifications
-    notificationBackground: 'ui04',     // Notification background
+    notificationBackground: 'rgba(26, 26, 26, 0.92)', // Notification background
     notificationNormalIcon: 'action01', // Normal notification icon
     notificationError: 'iconError',     // Error notification icon
     notificationSuccess: 'success01',   // Success notification icon
     notificationWarning: 'warning01',   // Warning notification icon
-    notificationText: 'text04',         // Notification text
+    notificationText: 'text01',         // Notification text
     notificationActionText: 'action01', // Notification action text
     notificationErrorText: 'textError', // Error notification text
     notificationActionFocus: 'action01', // Notification action focus outline
-    notificationCloseIcon: 'icon04',    // Notification close icon
+    notificationCloseIcon: 'text02',    // Notification close icon
 
     // Forms/Inputs
     inputBackground: 'field01',         // Input field background

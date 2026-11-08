@@ -40,11 +40,14 @@ const useStyles = makeStyles()((theme: Theme) => {
     return {
         container: {
             backgroundColor: theme.palette.notificationBackground,
+            backdropFilter: 'blur(20px) saturate(140%)',
+            WebkitBackdropFilter: 'blur(20px) saturate(140%)',
+            border: '1px solid rgba(255, 255, 255, 0.10)',
             padding: '8px 16px 8px 20px',
             display: 'flex',
             position: 'relative' as const,
-            borderRadius: `${theme.shape.borderRadius}px`,
-            boxShadow: '0px 6px 20px rgba(0, 0, 0, 0.25)',
+            borderRadius: '16px',
+            boxShadow: '0px 18px 45px rgba(0, 0, 0, 0.45)',
             marginBottom: theme.spacing(2),
 
             '&:last-of-type': {
