@@ -78,7 +78,13 @@ const useStyles = makeStyles()(theme => {
             }
         },
 
-        primary: {},
+        primary: {
+            color: theme.palette.text04,
+
+            '& div > svg': {
+                fill: theme.palette.icon04
+            }
+        },
 
         secondary: {
             backgroundColor: theme.palette.action02,

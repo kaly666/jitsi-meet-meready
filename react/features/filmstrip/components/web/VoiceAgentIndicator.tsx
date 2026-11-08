@@ -32,7 +32,7 @@ const VoiceAgentIndicator = () => {
         <div className = { classes.indicator }>
             <BaseIndicator
                 icon = { IconAI }
-                iconColor = { theme.palette.icon01 }
+                iconColor = { theme.palette.icon04 }
                 iconSize = { 16 }
                 tooltipKey = 'voiceAgents.thumbnailTooltip'
                 tooltipPosition = 'top' />

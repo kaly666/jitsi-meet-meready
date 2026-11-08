@@ -100,6 +100,10 @@ const useStyles = makeStyles()(theme => {
                 background: theme.palette.prejoinActionButtonPrimary,
                 color: theme.palette.prejoinActionButtonPrimaryText,
 
+                '& svg': {
+                    fill: theme.palette.prejoinActionButtonPrimaryText
+                },
+
                 '&:hover': {
                     backgroundColor: theme.palette.prejoinActionButtonPrimaryHover
                 }

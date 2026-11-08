@@ -165,7 +165,7 @@ export const colorMap = {
     prejoinRecordingWarningText: 'text03', // Recording warning text
     prejoinActionButtonPrimary: 'action01', // Primary action button
     prejoinActionButtonPrimaryHover: 'action01Hover', // Primary button hover
-    prejoinActionButtonPrimaryText: 'text01', // Primary button text
+    prejoinActionButtonPrimaryText: 'text04', // Primary button text
     prejoinActionButtonOptionsHover: 'action01Active', // Join options (arrow) button hover
     prejoinActionButtonSecondary: 'action02', // Secondary action button
     prejoinActionButtonSecondaryHover: 'action02Hover', // Secondary button hover
@@ -267,7 +267,7 @@ export const colorMap = {
     checkboxDisabledBackground: 'ui02',      // Checkbox disabled background
     checkboxDisabledBorder: 'surface05',     // Checkbox disabled border
     checkboxDisabledChecked: 'ui02',         // Checkbox disabled checked background
-    checkboxIcon: 'icon01',                  // Checkbox check icon (enabled)
+    checkboxIcon: 'icon04',                  // Checkbox check icon (enabled)
     checkboxIconDisabled: 'icon03',          // Checkbox check icon (disabled)
 
     // Switch

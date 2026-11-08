@@ -13,7 +13,12 @@ import { getVoiceAgentAwaitingConsent, isVoiceAgentBlockedByE2EE } from '../../f
 const useStyles = makeStyles()(theme => {
     return {
         agent: {
-            background: theme.palette.action01
+            background: theme.palette.action01,
+            color: theme.palette.text04,
+
+            '& svg': {
+                fill: theme.palette.icon04
+            }
         }
     };
 });

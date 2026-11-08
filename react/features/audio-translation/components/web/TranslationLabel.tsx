@@ -14,7 +14,12 @@ const useStyles = makeStyles()(theme => {
             background: theme.palette.warning03
         },
         translation: {
-            background: theme.palette.action01
+            background: theme.palette.action01,
+            color: theme.palette.text04,
+
+            '& svg': {
+                fill: theme.palette.icon04
+            }
         }
     };
 });

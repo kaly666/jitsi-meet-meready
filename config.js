@@ -2100,7 +2100,7 @@ var config = {
     // },
 
     // Application logo url
-    // defaultLogoUrl: 'images/watermark.svg',
+    defaultLogoUrl: 'images/meready-logo.png',
 
     // Meeting-pace timer shown in the conference info bar. It only appears
     // once a meeting duration is known — from a calendar event (calendar
