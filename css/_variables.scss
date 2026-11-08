@@ -69,10 +69,10 @@ $welcomePageWatermarkHeight: 64px;
  */
 $welcomePageDescriptionColor: #fff;
 $welcomePageFontFamily: inherit;
-$welcomePageBackground: none;
+$welcomePageBackground: radial-gradient(ellipse 80% 45% at 50% 0%, rgba(255, 252, 4, 0.10), rgba(255, 252, 4, 0) 70%), linear-gradient(180deg, rgba(17, 17, 17, 0.80) 0%, rgba(17, 17, 17, 0.90) 45%, rgba(17, 17, 17, 0.96) 100%), url('../images/meready-background.jpg');
 $welcomePageTitleColor: #FFFC04;
 
-$welcomePageHeaderBackground: linear-gradient(0deg, rgba(17, 17, 17, 0.85), rgba(17, 17, 17, 0.85)), url('../images/meready-background.jpg');
+$welcomePageHeaderBackground: none;
 $welcomePageHeaderBackgroundPosition: center;
 $welcomePageHeaderBackgroundRepeat: none;
 $welcomePageHeaderBackgroundSize: cover;

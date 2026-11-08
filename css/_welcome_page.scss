@@ -6,6 +6,9 @@ body.welcome-page {
 .welcome {
     background-image: $welcomePageBackground;
     background-color: #111111;
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
     font-family: $welcomePageFontFamily;
@@ -19,7 +22,7 @@ body.welcome-page {
         background-repeat: $welcomePageHeaderBackgroundRepeat;
         background-size: $welcomePageHeaderBackgroundSize;
         padding: $welcomePageHeaderPadding;
-        background-color: #131519;
+        background-color: transparent;
         overflow: hidden;
         position: relative;
 
@@ -130,8 +133,10 @@ body.welcome-page {
                 margin: $welcomePageEnterRoomMargin;
                 padding: $welcomePageEnterRoomPadding;
                 border-radius: 14px;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-                background-color: #1A1A1A;
+                box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+                background-color: rgba(255, 255, 255, 0.08);
+                backdrop-filter: blur(14px);
+                -webkit-backdrop-filter: blur(14px);
                 display: flex;
                 width: 100%;
                 text-align: left;
@@ -145,7 +150,7 @@ body.welcome-page {
                 .enter-room-input {
                     border-radius: 10px;
                     border: 0;
-                    background: #262626;
+                    background: rgba(0, 0, 0, 0.35);
                     color: #FFFFFF;
                     display: inline-block;
                     height: 50px;
@@ -186,7 +191,8 @@ body.welcome-page {
 
         .tab-content{
             display: $welcomePageTabContentDisplay;
-            height: 250px;
+            height: auto;
+            max-height: 340px;
             margin: 5px 0px;
             overflow: hidden;
             flex-grow: 1;
@@ -194,7 +200,7 @@ body.welcome-page {
         }
 
         .tab-buttons {
-            background-color: #262626;
+            background-color: rgba(255, 255, 255, 0.06);
             border-radius: 12px;
             color: #FFFFFF;
             font-weight: 600;
@@ -321,23 +327,23 @@ body.welcome-page {
         width: 100%;
         border-radius: 16px;
 
-        &--dark {
-            background: #1A1A1A;
-            color: #fff;
-        }
-
-        &--blue {
-            background: #1A1A1A;
-            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
-        }
-
+        &--dark,
+        &--blue,
         &--grey {
-            background: #1A1A1A;
-            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 20px;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.40), inset 0 0 0 1px rgba(255, 255, 255, 0.10);
+            box-sizing: border-box;
+            color: #fff;
+            padding: 8px;
         }
 
         &--notification {
-            background: #1A1A1A;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border-left: 4px solid #FFFC04;
             box-sizing: border-box;
             color: #fff;
@@ -367,7 +373,7 @@ body.welcome-page {
     }
 
     .welcome-footer {
-        background: #111111;
+        background: transparent;
         color: #fff;
         margin-top: 40px;
         position: relative;
