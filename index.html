@@ -219,6 +219,7 @@
             if (typeof config !== 'undefined') {
                 config.defaultLogoUrl = 'images/meready-logo.png';
                 config.deeplinking = Object.assign({}, config.deeplinking, { disabled: true });
+                config.lobby = Object.assign({}, config.lobby, { autoEnable: true });
             }
         })();
     </script>

@@ -16,7 +16,8 @@ import {
 } from '../base/lib-jitsi-meet';
 import {
     getFirstLoadableAvatarUrl,
-    getParticipantDisplayName
+    getParticipantDisplayName,
+    isLocalParticipantModerator
 } from '../base/participants/functions';
 import MiddlewareRegistry from '../base/redux/MiddlewareRegistry';
 import StateListenerRegistry from '../base/redux/StateListenerRegistry';
@@ -27,6 +28,7 @@ import {
 } from '../base/sounds/actions';
 import { isTestModeEnabled } from '../base/testing/functions';
 import { BUTTON_TYPES } from '../base/ui/constants.any';
+import { isInBreakoutRoom } from '../breakout-rooms/functions';
 import { openChat } from '../chat/actions';
 import {
     handleLobbyChatInitialized,
@@ -66,9 +68,9 @@ import {
     setPasswordJoinFailed,
     startKnocking
 } from './actions';
-import { updateLobbyParticipantOnLeave } from './actions.any';
+import { toggleLobbyMode, updateLobbyParticipantOnLeave } from './actions.any';
 import { KNOCKING_PARTICIPANT_SOUND_ID } from './constants';
-import { getKnockingParticipants, showLobbyChatButton } from './functions';
+import { getKnockingParticipants, getLobbyEnabled, showLobbyChatButton } from './functions';
 import logger from './logger';
 import { KNOCKING_PARTICIPANT_FILE } from './sounds';
 import { IKnockingParticipant } from './types';
@@ -445,3 +447,35 @@ function _maybeSendLobbyNotification(origin: any, message: any, { dispatch, getS
         )
     );
 }
+
+/**
+ * Conferences in which the lobby was already switched on automatically. Each conference is handled once, so a
+ * moderator who turns the lobby off afterwards is not overridden.
+ */
+const autoEnabledLobbyConferences = new WeakSet<object>();
+
+/**
+ * When {@code config.lobby.autoEnable} is set, switches the lobby on as soon as the local participant is a
+ * moderator of a joined conference, so everyone else has to be admitted.
+ */
+StateListenerRegistry.register(
+    state => {
+        const { conference } = state['features/base/conference'];
+
+        return Boolean(conference
+            && state['features/base/config'].lobby?.autoEnable
+            && conference.isLobbySupported?.()
+            && isLocalParticipantModerator(state)
+            && !getLobbyEnabled(state)
+            && !isInBreakoutRoom(state));
+    },
+    (shouldEnable, { dispatch, getState }) => {
+        const { conference } = getState()['features/base/conference'];
+
+        if (shouldEnable && conference && !autoEnabledLobbyConferences.has(conference)) {
+            autoEnabledLobbyConferences.add(conference);
+            logger.info('Enabling the lobby automatically (config.lobby.autoEnable).');
+            dispatch(toggleLobbyMode(true));
+        }
+    }
+);

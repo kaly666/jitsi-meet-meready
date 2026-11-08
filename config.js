@@ -824,6 +824,8 @@ var config = {
 
     // Configs for the lobby screen.
     // lobby: {
+    //     // Turns the lobby on automatically when a moderator joins, so everyone else waits to be admitted.
+    //     autoEnable: false,
     //     // If Lobby is enabled, it starts knocking automatically. Replaces `autoKnockLobby`.
     //     autoKnock: false,
     //     // Enables the lobby chat. Replaces `enableLobbyChat`.

@@ -563,6 +563,7 @@ export interface IConfig {
      */
     liveStreamingEnabled?: boolean;
     lobby?: {
+        autoEnable?: boolean;
         autoKnock?: boolean;
         enableChat?: boolean;
         showHangUp?: boolean;
