@@ -5,7 +5,7 @@ body.welcome-page {
 
 .welcome {
     background-image: $welcomePageBackground;
-    background-color: #fff;
+    background-color: #111111;
     display: flex;
     flex-direction: column;
     font-family: $welcomePageFontFamily;
@@ -189,9 +189,9 @@ body.welcome-page {
         }
 
         .tab-buttons {
-            background-color: #F1F1F1;
+            background-color: #262626;
             border-radius: 12px;
-            color: #111111;
+            color: #FFFFFF;
             font-weight: 600;
             font-size: 0.875rem;
             line-height: 1.125rem;
@@ -212,6 +212,7 @@ body.welcome-page {
 
                 &[aria-selected="true"] {
                     background-color: #FFFC04;
+                    color: #111111;
                     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
                 }
             }
@@ -290,7 +291,7 @@ body.welcome-page {
     }
 
     .welcome-cards-container {
-        color:#131519;
+        color: #FFFFFF;
         padding-top: 40px;
     }
 
@@ -313,24 +314,26 @@ body.welcome-page {
 
     .welcome-card {
         width: 100%;
-        border-radius: 8px;
+        border-radius: 16px;
 
         &--dark {
-            background: #444447;
+            background: #1A1A1A;
             color: #fff;
         }
 
         &--blue {
-            background: #D5E5FF;
+            background: #1A1A1A;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
         }
 
         &--grey {
-            background: #F2F3F4;
+            background: #1A1A1A;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
         }
 
         &--notification {
-            background: #444447;
-            border-left: 4px solid #0163FF;
+            background: #1A1A1A;
+            border-left: 4px solid #FFFC04;
             box-sizing: border-box;
             color: #fff;
             padding: 24px 32px;
@@ -352,14 +355,14 @@ body.welcome-page {
     }
 
     .welcome-notification-link {
-        color: #4C9AFF;
+        color: #FFFC04;
         font-size: 16px;
         font-weight: 600;
         text-decoration: underline;
     }
 
     .welcome-footer {
-        background: #131519;
+        background: #111111;
         color: #fff;
         margin-top: 40px;
         position: relative;

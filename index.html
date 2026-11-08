@@ -198,6 +198,30 @@
     </script>
     <script><!--#include virtual="/config.js" --></script><!-- adapt to your needs, i.e. set hosts and bosh path -->
     <script><!--#include virtual="/interface_config.js" --></script>
+    <script>
+        // MeReady branding. Applied on top of whatever config the server generates (e.g. the Docker web
+        // container rebuilds config.js and interface_config.js on start), so the branding cannot be lost.
+        (function () {
+            if (typeof interfaceConfig !== 'undefined') {
+                Object.assign(interfaceConfig, {
+                    APP_NAME: 'MeReady Meet',
+                    PROVIDER_NAME: 'MeReady',
+                    DEFAULT_BACKGROUND: '#111111',
+                    DEFAULT_WELCOME_PAGE_LOGO_URL: 'images/meready-logo.png',
+                    JITSI_WATERMARK_LINK: 'https://meready.ro',
+                    SHOW_JITSI_WATERMARK: true,
+                    SHOW_BRAND_WATERMARK: false,
+                    SHOW_POWERED_BY: false,
+                    DISPLAY_WELCOME_FOOTER: false,
+                    MOBILE_APP_PROMO: false
+                });
+            }
+            if (typeof config !== 'undefined') {
+                config.defaultLogoUrl = 'images/meready-logo.png';
+                config.deeplinking = Object.assign({}, config.deeplinking, { disabled: true });
+            }
+        })();
+    </script>
     <!-- Starts downloading config.js (when not inlined) and the dynamic branding before the app bundle. Optional. -->
     <script src="libs/preload.min.js?v=139"></script>
     <script src="libs/lib-jitsi-meet.min.js?v=139"></script>
