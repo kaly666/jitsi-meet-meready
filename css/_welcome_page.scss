@@ -62,8 +62,9 @@ body.welcome-page {
         }
 
         .not-allow-title-character-div {
-            color: #f03e3e;
-            background-color: #fff;
+            color: #FF6B6B;
+            background-color: rgba(242, 77, 95, 0.12);
+            border: 1px solid rgba(242, 77, 95, 0.35);
             font-size: 0.75rem;
             font-weight: 600;
             margin: 10px 0px 5px 0px;
@@ -80,7 +81,7 @@ body.welcome-page {
 
 
                 svg {
-                    fill:#f03e3e;
+                    fill: #FF6B6B;
 
                     & > *:first-child {
                         fill: none !important;
@@ -114,7 +115,7 @@ body.welcome-page {
         }
 
         ::placeholder {
-            color: #253858;
+            color: #8A8A8A;
         }
 
         #enter_room {
@@ -129,12 +130,12 @@ body.welcome-page {
                 margin: $welcomePageEnterRoomMargin;
                 padding: $welcomePageEnterRoomPadding;
                 border-radius: 14px;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-                background-color: #fff;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+                background-color: #1A1A1A;
                 display: flex;
                 width: 100%;
                 text-align: left;
-                color: #253858;
+                color: #FFFFFF;
             }
 
             .enter-room-input-container {
@@ -144,15 +145,19 @@ body.welcome-page {
                 .enter-room-input {
                     border-radius: 10px;
                     border: 0;
-                    background: #fff;
+                    background: #262626;
+                    color: #FFFFFF;
                     display: inline-block;
                     height: 50px;
                     width: 100%;
                     font-size: 0.875rem;
-                    padding-left: 10px;
+                    padding-left: 14px;
+                    box-sizing: border-box;
 
+                    &:focus,
                     &.focus-visible {
-                        outline: 2px solid #111111;
+                        outline: 2px solid #FFFC04;
+                        outline-offset: 0;
                     }
                 }
             }
