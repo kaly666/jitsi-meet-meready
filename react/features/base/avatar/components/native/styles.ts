@@ -69,7 +69,7 @@ export default {
 
     initialsText: (size: number = DEFAULT_SIZE) => {
         return {
-            color: 'white',
+            color: '#111111',
             fontSize: Math.max(size * 0.45, 1),
             fontWeight: '100'
         };

@@ -306,9 +306,9 @@ export const colorMap = {
     // Label
     labelBackground: 'ui04',                 // Label default background
     labelText: 'text01',                     // Label text color
-    labelWhiteBackground: 'ui08',            // Label white variant background
-    labelWhiteText: 'text04',                // Label white variant text
-    labelWhiteIcon: 'surface01',             // Label white variant icon
+    labelWhiteBackground: 'ui02',            // Label white variant background
+    labelWhiteText: 'text01',                // Label white variant text
+    labelWhiteIcon: 'action01',              // Label white variant icon
 
     // Tooltip
     tooltipBackground: 'uiBackground',       // Tooltip background color

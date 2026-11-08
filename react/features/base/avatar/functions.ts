@@ -1,16 +1,15 @@
 import GraphemeSplitter from 'grapheme-splitter';
 import { split } from 'lodash-es';
 
+// MeReady brand palette: yellow and amber tones. All of them are light enough for the dark initials
+// color set in components/web/styles.ts (and the native initialsText style).
 const AVATAR_COLORS = [
-    '#6A50D3',
-    '#FF9B42',
-    '#DF486F',
-    '#73348C',
-    '#B23683',
-    '#F96E57',
-    '#4380E2',
-    '#238561',
-    '#00A8B3'
+    '#FFFC04',
+    '#FFD600',
+    '#FFE45C',
+    '#F5C400',
+    '#FFF07A',
+    '#FFC53D'
 ];
 const wordSplitRegex = (/\s+|\.+|_+|;+|-+|,+|\|+|\/+|\\+|"+|'+|\(+|\)+|#+|&+/);
 const splitter = new GraphemeSplitter();

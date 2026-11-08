@@ -14,7 +14,7 @@ export const getAvatarFont = (theme: Theme) => theme.typography?.heading1 ?? {};
 /**
  * Default text color for avatar initials.
  */
-export const AVATAR_DEFAULT_INITIALS_COLOR = '#FFFFFF';
+export const AVATAR_DEFAULT_INITIALS_COLOR = '#111111';
 
 /**
  * Returns the text color for avatar initials from the theme.
@@ -23,4 +23,4 @@ export const AVATAR_DEFAULT_INITIALS_COLOR = '#FFFFFF';
  * @returns {string} The text color.
  */
 export const getAvatarInitialsColor = (theme: Theme): string =>
-    theme.palette?.text01 || AVATAR_DEFAULT_INITIALS_COLOR;
+    theme.palette?.text04 || AVATAR_DEFAULT_INITIALS_COLOR;
